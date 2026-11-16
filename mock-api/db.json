@@ -1,0 +1,241 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ayesha Khan",
+      "email": "customer@paanilink.test",
+      "password": "123456",
+      "role": "customer",
+      "cnic": "42101-1234567-1",
+      "phone": "03001234567",
+      "address": "Gulshan-e-Iqbal, Karachi",
+      "zoneId": 1
+    },
+    {
+      "id": 2,
+      "name": "Usman Ali",
+      "email": "officer@paanilink.test",
+      "password": "123456",
+      "role": "officer",
+      "zoneId": 1
+    },
+    {
+      "id": 3,
+      "name": "Bilal Ahmed",
+      "email": "operator@paanilink.test",
+      "password": "123456",
+      "role": "operator",
+      "hydrantId": 1
+    },
+    {
+      "id": 4,
+      "name": "Hamza Raza",
+      "email": "driver@paanilink.test",
+      "password": "123456",
+      "role": "driver",
+      "tankerIds": [
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Admin User",
+      "email": "admin@paanilink.test",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "name": "MUHAMMAD ASKANI",
+      "email": "muhammad.64797@iqra.edu.pk",
+      "password": "123456",
+      "role": "customer",
+      "cnic": "42301-7139802-9",
+      "phone": "03002926696",
+      "address": "Islam Road juman shah pilot no 4",
+      "zoneId": 1,
+      "id": 6
+    }
+  ],
+  "zones": [
+    {
+      "id": 1,
+      "name": "Gulshan Zone",
+      "area": "Gulshan-e-Iqbal"
+    },
+    {
+      "id": 2,
+      "name": "North Nazimabad Zone",
+      "area": "North Nazimabad"
+    }
+  ],
+  "hydrants": [
+    {
+      "id": 1,
+      "name": "Gulshan Hydrant",
+      "zoneId": 1,
+      "dailyQuota": 30000,
+      "usedToday": 9000,
+      "openTime": "06:00",
+      "closeTime": "22:00",
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "name": "North Nazimabad Hydrant",
+      "zoneId": 2,
+      "dailyQuota": 24000,
+      "usedToday": 6000,
+      "openTime": "07:00",
+      "closeTime": "21:00",
+      "status": "Available"
+    }
+  ],
+  "tankers": [
+    {
+      "id": 1,
+      "registration": "KHI-1021",
+      "capacity": 3000,
+      "hydrantId": 1,
+      "status": "Assigned"
+    },
+    {
+      "id": 2,
+      "registration": "KHI-2045",
+      "capacity": 6000,
+      "hydrantId": 1,
+      "status": "Available"
+    },
+    {
+      "id": 3,
+      "registration": "KHI-3090",
+      "capacity": 1000,
+      "hydrantId": 2,
+      "status": "Available"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Hamza Raza",
+      "phone": "03001112222",
+      "status": "Assigned"
+    },
+    {
+      "id": 2,
+      "name": "Saad Khan",
+      "phone": "03003334444",
+      "status": "Available"
+    }
+  ],
+  "rates": [
+    {
+      "id": 1,
+      "capacity": 1000,
+      "commercial": 1500,
+      "subsidised": 400
+    },
+    {
+      "id": 2,
+      "capacity": 3000,
+      "commercial": 4000,
+      "subsidised": 1000
+    },
+    {
+      "id": 3,
+      "capacity": 6000,
+      "commercial": 7500,
+      "subsidised": 1800
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "customerName": "Ayesha Khan",
+      "zoneId": 1,
+      "hydrantId": 1,
+      "capacity": 3000,
+      "type": "commercial",
+      "status": "Dispatched",
+      "date": "2026-11-18",
+      "address": "Block 7, Gulshan-e-Iqbal",
+      "amount": 4000,
+      "tankerId": 1,
+      "driverId": 1,
+      "createdAt": "2026-11-16"
+    },
+    {
+      "id": 2,
+      "customerId": 1,
+      "customerName": "Ayesha Khan",
+      "zoneId": 1,
+      "hydrantId": 1,
+      "capacity": 1000,
+      "type": "subsidised",
+      "status": "Pending Approval",
+      "date": "2026-11-19",
+      "address": "Block 7, Gulshan-e-Iqbal",
+      "amount": 400,
+      "tankerId": null,
+      "driverId": null,
+      "createdAt": "2026-11-16"
+    },
+    {
+      "customerId": 6,
+      "customerName": "MUHAMMAD ASKANI",
+      "zoneId": 1,
+      "hydrantId": 1,
+      "capacity": 3000,
+      "type": "commercial",
+      "status": "Approved",
+      "date": "2026-11-18",
+      "address": "Islam Road juman shah pilot no 4",
+      "amount": 4000,
+      "tankerId": null,
+      "driverId": null,
+      "createdAt": "2026-11-16",
+      "id": 3
+    }
+  ],
+  "subsidyApplications": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "customerName": "Ayesha Khan",
+      "zoneId": 1,
+      "category": "Low-income household",
+      "proof": "Income certificate submitted",
+      "status": "Pending"
+    }
+  ],
+  "trips": [
+    {
+      "bookingId": 1,
+      "customerId": 1,
+      "driverId": 1,
+      "tankerId": 1,
+      "status": "Dispatched",
+      "address": "Block 7, Gulshan-e-Iqbal",
+      "date": "2026-11-18",
+      "hydrantId": 1,
+      "id": 1
+    }
+  ],
+  "bills": [
+    {
+      "id": 1,
+      "bookingId": 1,
+      "customerId": 1,
+      "amount": 4000,
+      "status": "Unpaid",
+      "date": "2026-11-16"
+    }
+  ],
+  "disputes": [],
+  "settings": [
+    {
+      "id": 1,
+      "monthlySubsidyLimit": 2
+    }
+  ]
+}
